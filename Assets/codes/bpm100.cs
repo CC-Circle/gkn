@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+
 //using JetBrains.Rider.Unity.Editor;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -18,7 +20,9 @@ public class bpm100 : MonoBehaviour
     bool riseok;
     public static bool sinmaok;
     float sinmadametime;
-
+    [SerializeField] private int matikazu;
+    public static bool sinmaokok;
+    bool a,b;
     void Start()
     {
         Time.timeScale = 5 / 3f;
@@ -31,10 +35,14 @@ public class bpm100 : MonoBehaviour
         last = 0.0f;
         riseok = false;
         sinmaok = true;
+        sinmaokok=true;
+        a=true;
+        b=false;
     }
 
     void sinma()
     {
+        
         if (taiminngu)
         {
             last = Time.realtimeSinceStartup;
@@ -42,6 +50,7 @@ public class bpm100 : MonoBehaviour
             ookisa = transform.localScale; // ローカル変数に格納
             ookisa.x += 0.1f;
             ookisa.y += 0.1f;
+            Debug.Log(ookisa);
             transform.localScale = ookisa;
             riseok = true;
 
@@ -62,7 +71,11 @@ public class bpm100 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(SerialReceive.data);
+        if(a&&b==false){
+            //Debug.Log("1");
+            debugtxt.dtxt=true;
+        }
+        //Debug.Log(SerialReceive.data);
         
         if (Input.GetKey(KeyCode.Return) && sinmaok || sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
         {
@@ -98,7 +111,7 @@ public class bpm100 : MonoBehaviour
             }
             //Debug.Log("%100=20");
         }
-        if (Time.realtimeSinceStartup - last >= 10 && riseok)
+        if (Time.realtimeSinceStartup - last >= matikazu && riseok)
         {
             timerise = transform.localScale; // ローカル変数に格納
             timerise.x = 0.2f;
@@ -106,14 +119,15 @@ public class bpm100 : MonoBehaviour
             transform.localScale = timerise;
             riseok = false;
         }
-        if (sinmaok != true)
+        if (sinmaok != true&&sinmaokok)
         {
-
+            sinmaokok=false;
             sinmadametime = Time.realtimeSinceStartup;
         }
-        if (Time.realtimeSinceStartup - sinmadametime >= 10 && sinmaok != true)
+        if (Time.realtimeSinceStartup - sinmadametime >= matikazu && sinmaok != true)
         {
             sinmaok = true;
+            sinmaokok=true;
 
         }
     }

@@ -671,6 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f670d42ced744c797334b4ae8416bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matikazu: 3
 --- !u!212 &455063078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1183,6 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d723eeffb1ef942438c70fb6e81aeeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ge_mujikan: 60
 --- !u!114 &933763508
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class tyutextchange1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(bpm100.haato);
         gameObject.GetComponent<Text>().text  ="現在進捗度"+ bpm100.haato +"%";
         if(points.point==1){
             SceneManager.LoadScene("tutorial2");

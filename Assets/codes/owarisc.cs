@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class owarisc : MonoBehaviour
 {
+    public static bool kill;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class owarisc : MonoBehaviour
             bpm100.taiminngu=false;
             bpm100.haato=0;
             bpm100.sinmaok=true;
+            bpm100.sinmaokok=true;
             dameji.damejiok=false;
             dameji.ldie=1;
             dameji.mdie=1;
@@ -31,6 +33,8 @@ public class owarisc : MonoBehaviour
             spown.lspo=1;
             spown.mspo=1;
             spown.rspo=1;
+            kill=true;
+            
             SceneManager.LoadScene("Title");
         }
     }
