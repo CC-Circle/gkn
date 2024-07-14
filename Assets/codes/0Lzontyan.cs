@@ -38,12 +38,28 @@ public class Lzontyan : MonoBehaviour
         if(Time.realtimeSinceStartup>lsindekara+2&&llive==false){
             Destroy (this.gameObject);
         }
-        if(llive&&lookisa.z>-7){
+        if(llive&&lookisa.z>-5){
             lookisa=transform.position;//ugokuに現在の位置を代入
             lookisa.z-=0.01f;
             lookisa.x+=0.00625f;
             transform.position=lookisa;//移動後のugokuを代入
             
+        }else if(llive&&lookisa.z<=-5&&lookisa.z>-7&&(int)(lookisa.z*10)%2==0){
+            
+            lookisa=transform.position;//ugokuに現在の位置を代入
+            lookisa.z-=0.01f;
+            lookisa.x+=0.00625f;
+            transform.position=lookisa;//移動後のugokuを代入'
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
+
+        }else if(llive&&lookisa.z<=-5&&lookisa.z>-7&&(int)(lookisa.z*10)%2==-1){
+            
+            lookisa=transform.position;//ugokuに現在の位置を代入
+            lookisa.z-=0.01f;
+            lookisa.x+=0.00625f;
+            transform.position=lookisa;//移動後のugokuを代入
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
+
         }else if(llive&&lookisa.z<=-7){
             //Debug.Log("yobu");
             dameji.damejiok=true;

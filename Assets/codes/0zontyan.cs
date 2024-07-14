@@ -38,11 +38,27 @@ public class zontyan : MonoBehaviour
         if(Time.realtimeSinceStartup>sindekara+2&&live==false){
             Destroy (this.gameObject);
         }
-        if(live&&ookisa.z>-7){
+        if(live&&ookisa.z>-5){
             ookisa=transform.position;//ugokuに現在の位置を代入
             ookisa.z-=0.01f;
             transform.position=ookisa;//移動後のugokuを代入
             
+        }else if(live&&ookisa.z<-5&&ookisa.z>-7&&(int)(ookisa.z*10)%2==0){
+            
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
+            //しろ
+            ookisa=transform.position;//ugokuに現在の位置を代入
+            ookisa.z-=0.01f;
+            transform.position=ookisa;//移動後のugokuを代入
+            
+        }else if(live&&ookisa.z<-5&&ookisa.z>-7&&(int)(ookisa.z*10)%2==-1){
+            
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
+            //あか
+            ookisa=transform.position;//ugokuに現在の位置を代入
+            ookisa.z-=0.01f;
+            transform.position=ookisa;//移動後のugokuを代入
+
         }else if(live&&ookisa.z<=-7){
             
             dameji.damejiok=true;
@@ -51,5 +67,7 @@ public class zontyan : MonoBehaviour
             //GameObject instance = (GameObject)Instantiate(ldameji, new Vector3( 0, 0, 0), Quaternion.identity);
             Destroy (this.gameObject);
         }
+        //Debug.Log((int)ookisa.z%2);
     }
+    
 }
