@@ -109,6 +109,7 @@ public class bpm100 : MonoBehaviour
             timerise.x = 0.2f;
             timerise.y = 0.2f;
             transform.localScale = timerise;
+            haato=0;
             riseok = false;
         }
         if (sinmaok != true&&sinmaokok)
