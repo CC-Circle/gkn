@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6713084499581494349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6343679087444716330}
+  - component: {fileID: 25046935343033924}
+  m_Layer: 0
+  m_Name: spown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6343679087444716330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713084499581494349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.1300004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &25046935343033924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713084499581494349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f595d0629cc4d41afb6db379870b60d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  haato: {fileID: 2672868802788265598, guid: cf6868f06c7d0435d937192e675d2ec7, type: 3}
+  waku: {fileID: 4717716437371918539, guid: ad7bb4430628a480da2e4a025b3787c9, type: 3}
+  sinin: {fileID: 3653881791284753358, guid: 1dd443f6a1c6448d481328f2947bc785, type: 3}
+  batu: {fileID: 5027437594943022822, guid: eaeb0e8626f024ff8971dee86817efc3, type: 3}
+  sh: {fileID: 4471714904144120875, guid: 004cca5a549ed456b8b53fa43be7ff57, type: 3}
+  sr: {fileID: 6027435264678034141, guid: 86ba44732b130403b9a30e1fcab224f2, type: 3}
+  Position1: {x: 10000, y: 0, z: -0.1}
+  Position2: {x: 9999.99, y: 0, z: 0}
+  Position3: {x: 10002.76, y: 0, z: 0}
+  Position4: {x: 10191, y: 0, z: -0.1}
+  Position5: {x: 0, y: 0, z: 0}
+  Position6: {x: 0, y: 0, z: 0}
+  mawasinin: {x: 0, y: 0, z: -90}

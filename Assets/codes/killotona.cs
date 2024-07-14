@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class owataozon : MonoBehaviour
+public class killotona : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,8 @@ public class owataozon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = "倒した敵の数:" + dameji.taokazu +"体";
+        if(owarisc.kill){
+            Destroy(this.gameObject);
+        }
     }
 }

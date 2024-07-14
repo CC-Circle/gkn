@@ -20,7 +20,7 @@ public class points : MonoBehaviour
     }
 
     void changepoint(){
-        gameObject.GetComponent<Text>().text = "助けた人数; " + point +"人";//textを変更する
+        gameObject.GetComponent<Text>().text = "助けた人数: " + point +"人";//textを変更する
     }
 
     // Update is called once per frame

@@ -11,6 +11,8 @@ public class dameji : MonoBehaviour
     public static int ldie,mdie,rdie;
     public static float lct,mct,rct;
     public static int taokazu ,ukekazu;
+    bool ukeok;
+    double laslast;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,21 +27,16 @@ public class dameji : MonoBehaviour
         rdie=1;
         taokazu=0;
         ukekazu=0;
+        laslast=-3;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(damejiok){
-            ookisa=this.transform.position;//ugokuに現在の位置を代入
-            ookisa.x=1000;//移動を追加
-            transform.position=ookisa;//移動後のugokuを代入
-            bpm100.sinmaok=false;
-            ukekazu++;
-            if(okok){
-                n=0;
-                okok=false;
-            }
+            
+            ukeok=true;
+            
         }
         n++;
         if(damejiok&&n>100){
@@ -49,6 +46,19 @@ public class dameji : MonoBehaviour
             damejiok=false;
             
             okok=true;
+        }
+        if(ukeok&&Time.realtimeSinceStartup-laslast>=3){
+            ookisa=this.transform.position;//ugokuに現在の位置を代入
+            ookisa.x=1000;//移動を追加
+            transform.position=ookisa;//移動後のugokuを代入
+            bpm100.sinmaok=false;
+            ukekazu++;
+            if(okok){
+                n=0;
+                okok=false;
+            }
+            ukeok=false;
+            laslast=Time.realtimeSinceStartup;
         }
     }
 }

@@ -16,7 +16,7 @@ public class countdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int jikan=(int)(4-Time.realtimeSinceStartup+hajime);
+        int jikan=(int)(6-Time.realtimeSinceStartup+hajime);
         gameObject.GetComponent<Text>().text =  ""+jikan ;
         if(jikan==0){
             SceneManager.LoadScene("soseigame");

@@ -14,6 +14,6 @@ public class owaukekazu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = "ダメージを受けた回数;" + dameji.ukekazu +"回";
+        gameObject.GetComponent<Text>().text = "ダメージを受けた回数:" + dameji.ukekazu +"回";
     }
 }

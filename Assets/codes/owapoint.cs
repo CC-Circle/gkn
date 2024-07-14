@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class owataozon : MonoBehaviour
+public class owapoint : MonoBehaviour
 {
-    
+    public static int opoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class owataozon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = "倒した敵の数:" + dameji.taokazu +"体";
+        opoint=points.point;
+        gameObject.GetComponent<Text>().text = "助けた人数: " + opoint +"人";//textを変更する
     }
 }
