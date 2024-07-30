@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ActivateAllDisplays : MonoBehaviour
 {
+    public static int[] rank;
+    public static int rankazu;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +19,8 @@ public class ActivateAllDisplays : MonoBehaviour
             {
                 Display.displays[i].Activate();
             }
+        rank = new int[5]{0,0,0,0,0};
+        rankazu=0;
     }
 
     // Update is called once per frame

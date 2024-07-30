@@ -10,7 +10,7 @@ public class owarisc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        kill=true;
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class owarisc : MonoBehaviour
             spown.lspo=1;
             spown.mspo=1;
             spown.rspo=1;
-            kill=true;
+            ActivateAllDisplays.rankazu++;
             SceneManager.LoadScene("Title");
         }
     }
