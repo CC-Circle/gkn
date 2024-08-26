@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class hidarimove : MonoBehaviour
+public class owaukekazu : MonoBehaviour
 {
     // Start is called before the first frame update
-    Vector3 ookisa;
     void Start()
     {
         
@@ -14,8 +14,6 @@ public class hidarimove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ookisa = transform.position; // ローカル変数に格納
-            ookisa.x -= 0.1f;
-        transform.position = ookisa;
+        gameObject.GetComponent<Text>().text = "ダメージを受けた回数;" + dameji.ukekazu +"回";
     }
 }
