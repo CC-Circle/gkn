@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class owapoint : MonoBehaviour
+public class killotona : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,8 @@ public class owapoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = "助けた人数; " + dameji.tasuketakazu +"人";//textを変更する
+        if(owarisc.kill){
+            Destroy(this.gameObject);
+        }
     }
 }

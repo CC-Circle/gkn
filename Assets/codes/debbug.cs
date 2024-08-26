@@ -20,5 +20,8 @@ public class debbug : MonoBehaviour
         //if(Input.GetKey(KeyCode.Tab)){
           //  Debug.Log("time="+Time.time+" bpm100you="+Time.time*100%100);
         //}
+        if(Input.GetKey(KeyCode.A)){
+          Debug.Log(dameji.ukekazu);
+        }
     }
 }
