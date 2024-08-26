@@ -37,12 +37,28 @@ public class Rzontyan : MonoBehaviour
         if(Time.realtimeSinceStartup>rsindekara+2&&rlive==false){
             Destroy (this.gameObject);
         }
-        if(rlive&&rookisa.z>-7){
+        if(rlive&&rookisa.z>-5){
             rookisa=transform.position;//ugokuに現在の位置を代入
             rookisa.z-=0.01f;
             rookisa.x-=0.00625f;
             transform.position=rookisa;//移動後のugokuを代入
             
+        }else if(rlive&&rookisa.z<=-5&&rookisa.z>-7&&(int)(rookisa.z*10)%2==0){
+            
+            rookisa=transform.position;//ugokuに現在の位置を代入
+            rookisa.z-=0.01f;
+            rookisa.x-=0.00625f;
+            transform.position=rookisa;//移動後のugokuを代入
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
+
+        }else if(rlive&&rookisa.z<=-5&&rookisa.z>-7&&(int)(rookisa.z*10)%2==-1){
+            
+            rookisa=transform.position;//ugokuに現在の位置を代入
+            rookisa.z-=0.01f;
+            rookisa.x-=0.00625f;
+            transform.position=rookisa;//移動後のugokuを代入
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
+
         }else if(rlive&&rookisa.z<=-7){
             dameji.damejiok=true;
             dameji.rdie++;

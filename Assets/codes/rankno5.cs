@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class owarisc : MonoBehaviour
+public class rankno5 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,8 +14,7 @@ public class owarisc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Return)){
-            SceneManager.LoadScene("Title");
-        }
+        if(ActivateAllDisplays.rankazu>=4)
+        gameObject.GetComponent<Text>().text = "No.5     " + ActivateAllDisplays.rank[0] ;
     }
 }
