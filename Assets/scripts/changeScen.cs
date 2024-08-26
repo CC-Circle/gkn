@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class changeScen : MonoBehaviour
 {
+     public SerialReceive SerialReceive;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +24,10 @@ public class changeScen : MonoBehaviour
     void Update()
     {
         //もしリターンキーが押されたら関数「naguru」を起動する
-        if(Input.GetKey(KeyCode.Return) ||  SerialReceive.data==1){
+        int getdata;
+        int.TryParse(SerialReceive.data, out getdata);
+        if(Input.GetKey(KeyCode.Return)|| getdata == 1){
             naguru();
-            owarisc.kill=false;
         }
     }
     void FixedUpdate(){
