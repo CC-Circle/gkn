@@ -31,7 +31,14 @@ public class SerialHandler : MonoBehaviour
     void Update()
     {
         if (isNewMessageReceived_) {
-            OnDataReceived(message_);
+            try {
+                OnDataReceived(message_);
+            }catch (System.Exception e)
+            {
+                Debug.LogWarning(e.Message);//エラーを表示
+                Debug.LogWarning("hoge");//エラーを表示  
+            } 
+            
         }
         isNewMessageReceived_ = false;
     }

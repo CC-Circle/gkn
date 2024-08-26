@@ -22,7 +22,7 @@ public class spown : MonoBehaviour
     void Update()
     {
         //c=Random.Range(a,b);でcにaからbまでのランダムな数字を代入
-        n=Random.Range(1,20000);
+        n=Random.Range(1,5000);
         if(n<=10||Input.GetKey(KeyCode.L)){
             lx=(Random.Range(0,150)-50.0f)/100.0f-7.0f;
             ly=Random.Range(0,200)/100.0f;

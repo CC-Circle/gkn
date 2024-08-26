@@ -15,6 +15,6 @@ public class owataozon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = "倒した敵の数;" + dameji.taokazu +"体";
+        gameObject.GetComponent<Text>().text = "倒した敵の数:" + dameji.taokazu +"体";
     }
 }
