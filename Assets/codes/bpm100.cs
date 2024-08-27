@@ -22,6 +22,11 @@ public class bpm100 : MonoBehaviour
     float sinmadametime;
     [SerializeField] private int matikazu;
     public static bool sinmaokok;
+
+    bool lastok;
+    public GameObject sindenzu;
+    public GameObject aka; 
+    bool underbarok;
     void Start()
     {
         Time.timeScale = 5 / 3f;
@@ -35,6 +40,18 @@ public class bpm100 : MonoBehaviour
         riseok = false;
         sinmaok = true;
         sinmaokok=true;
+        lastok=false;
+        underbarok=true;
+    }
+
+    void sp(){
+        if(lastok==true){
+            Instantiate(sindenzu);
+            underbarok=false;
+        }else{
+            Instantiate(aka);
+            underbarok=false;
+        }
     }
 
     void sinma()
@@ -49,6 +66,7 @@ public class bpm100 : MonoBehaviour
             Debug.Log(ookisa);
             transform.localScale = ookisa;
             riseok = true;
+            lastok=true;
 
             if (haato >= 100)
             {
@@ -68,7 +86,9 @@ public class bpm100 : MonoBehaviour
     void Update()
     {
         //Debug.Log(SerialReceive.data);
-        
+        if(0f<=Time.time*100%100&&Time.time*100%100<=6f&&underbarok){
+            sp();
+        }
         if (Input.GetKey(KeyCode.Return) && sinmaok || sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
         {
             sinma();
@@ -100,7 +120,10 @@ public class bpm100 : MonoBehaviour
                 transform.localScale = ookisa;
                 taiminngu = false;
                 ok = true;
+                underbarok=true;
+
             }
+            lastok=false;
             //Debug.Log("%100=20");
         }
         if (Time.realtimeSinceStartup - last >= matikazu && riseok)
