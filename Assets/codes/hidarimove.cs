@@ -17,7 +17,7 @@ public class hidarimove : MonoBehaviour
     {
         ookisa = transform.position; // ローカル変数に格納
         if(ookisa.x>=9900){
-            ookisa.x -= 0.1f;
+            ookisa.x -= 0.4f;
         }else {
             Destroy (this.gameObject);
         }
