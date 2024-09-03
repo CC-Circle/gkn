@@ -760,7 +760,7 @@ MonoBehaviour:
   aka: {fileID: 375528010738237569, guid: 054121c10694e421fba2ec0d5abd22c6, type: 3}
   seikou: {fileID: 5682082800608150790, guid: 2cc9c889d91944b3baa0823f4c84af53, type: 3}
   sippai: {fileID: 1206058395995026311, guid: 826b3dd46e505443d9631c3f6f7f6c5d, type: 3}
-  sippai2: {fileID: 0}
+  sippai2: {fileID: 9091579572664771040, guid: 751100cdf8a1248c5b0c8fcc8da9610a, type: 3}
   hayai: {fileID: 503686707498093065, guid: d899a1ff5de404bbf98cf88e19228ad5, type: 3}
   osoi: {fileID: 673995298813208188, guid: 94703139dc9c24825aeb8bcbcb74c351, type: 3}
 --- !u!212 &455063078
