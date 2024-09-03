@@ -29,6 +29,7 @@ public class bpm100 : MonoBehaviour
     bool underbarok;
     public GameObject seikou;
     public GameObject sippai;
+    public GameObject sippai2;
     public GameObject hayai;
     public GameObject osoi;
     int seikoukadouka;
@@ -72,6 +73,7 @@ public class bpm100 : MonoBehaviour
         if (taiminngu)
         {
             Instantiate(seikou);
+            hayailast=Time.time;
             seikoukadouka=1;
             last = Time.realtimeSinceStartup;
             haato += 20;
@@ -107,8 +109,9 @@ public class bpm100 : MonoBehaviour
         if (Input.GetKey(KeyCode.Return) && sinmaok || sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
         {
             sinma();
-        }else if(Input.GetKey(KeyCode.Return)&&Time.time-hayailast>=1.0||SerialReceive.data==1&&Time.time-hayailast>=1.0){
-            Instantiate(sippai);
+        }
+        if(Input.GetKey(KeyCode.Return)&&Time.time-hayailast>=1.0&&taiminngu!=true||SerialReceive.data==1&&Time.time-hayailast>=1.0&&taiminngu!=true){
+            Instantiate(sippai2);
             Instantiate(hayai);
             hayailast=Time.time;
         }
