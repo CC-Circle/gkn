@@ -27,6 +27,13 @@ public class bpm100 : MonoBehaviour
     public GameObject sindenzu;
     public GameObject aka; 
     bool underbarok;
+    public GameObject seikou;
+    public GameObject sippai;
+    public GameObject hayai;
+    public GameObject osoi;
+    int seikoukadouka;
+    int seikoukadoukaok;
+    float hayailast;
     void Start()
     {
         Time.timeScale = 5 / 3f;
@@ -42,6 +49,9 @@ public class bpm100 : MonoBehaviour
         sinmaokok=true;
         lastok=0;
         underbarok=true;
+        seikoukadouka=0;
+        seikoukadoukaok=1;
+        hayailast=0.0f;
     }
 
     void sp(){
@@ -61,6 +71,8 @@ public class bpm100 : MonoBehaviour
     {
         if (taiminngu)
         {
+            Instantiate(seikou);
+            seikoukadouka=1;
             last = Time.realtimeSinceStartup;
             haato += 20;
             ookisa = transform.localScale; // ローカル変数に格納
@@ -95,10 +107,25 @@ public class bpm100 : MonoBehaviour
         if (Input.GetKey(KeyCode.Return) && sinmaok || sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
         {
             sinma();
+        }else if(Input.GetKey(KeyCode.Return)&&Time.time-hayailast>=1.0||SerialReceive.data==1&&Time.time-hayailast>=1.0){
+            Instantiate(sippai);
+            Instantiate(hayai);
+            hayailast=Time.time;
+        }
+        if(Time.time * 100 % 100 > 7.0f && Time.time * 100 % 100 <8.0f){
+            if(seikoukadouka==0&&seikoukadoukaok==1){
+                Instantiate(sippai);
+                Instantiate(osoi);
+                seikoukadoukaok=0;
+            }
+            Debug.Log(seikoukadoukaok);
+            
+            
         }
         //Debug.Log(Time.time);
         if (Time.time * 100 % 100 > 97.0f || Time.time * 100 % 100 < 3.0f)
         {
+            
             if (ok)
             {
                 ookisa = transform.localScale; // ローカル変数に格納
@@ -110,7 +137,7 @@ public class bpm100 : MonoBehaviour
                 ok = false;
                 //Debug.Log("%100=0");
             }
-
+            
 
         }
         if (Time.time * 100 % 100 > 7.0f && Time.time * 100 % 100 < 13.0f)
@@ -124,10 +151,15 @@ public class bpm100 : MonoBehaviour
                 taiminngu = false;
                 ok = true;
                 underbarok=true;
+                
 
             }
             
             //Debug.Log("%100=20");
+        }
+        if (Time.time * 100 % 100 > 90.0f && Time.time * 100 % 100 < 95.0f){
+            seikoukadoukaok=1;
+            seikoukadouka=0;
         }
         if (Time.realtimeSinceStartup - last >= matikazu && riseok)
         {
