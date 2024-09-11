@@ -11,6 +11,9 @@ public class zontyan : MonoBehaviour
     Vector3 ugoku;
     float sindekara;
     int kn;
+    public AudioClip audioClip2;
+    private AudioSource audioSource;
+    bool ok;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,9 @@ public class zontyan : MonoBehaviour
         spown.mspo++;
         live =true;
         //MonoBehaviour dameji=new MonoBehaviour();
+        audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.clip = audioClip2;
+            ok=true;
     }
 
     // Update is called once per frame
@@ -27,6 +33,7 @@ public class zontyan : MonoBehaviour
             dameji.mdie++;
             dameji.taokazu++;
             live=false;
+            audioSource.Stop();  
             sindekara=Time.realtimeSinceStartup;
             dameji.mct=Time.realtimeSinceStartup;
         }
@@ -36,14 +43,15 @@ public class zontyan : MonoBehaviour
             transform.position=ookisa;//移動後のugokuを代入
         }
         if(Time.realtimeSinceStartup>sindekara+2&&live==false){
+            audioSource.Stop();  
             Destroy (this.gameObject);
         }
-        if(live&&ookisa.z>-5){
+        if(live&&ookisa.z>-4){
             ookisa=transform.position;//ugokuに現在の位置を代入
             ookisa.z-=0.01f;
             transform.position=ookisa;//移動後のugokuを代入
             
-        }else if(live&&ookisa.z<-5&&ookisa.z>-7&&(int)(ookisa.z*10)%2==0){
+        }else if(live&&ookisa.z<-4&&ookisa.z>-7&&(int)(ookisa.z*10)%2==0){
             
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
             //しろ
@@ -51,7 +59,7 @@ public class zontyan : MonoBehaviour
             ookisa.z-=0.01f;
             transform.position=ookisa;//移動後のugokuを代入
             
-        }else if(live&&ookisa.z<-5&&ookisa.z>-7&&(int)(ookisa.z*10)%2==-1){
+        }else if(live&&ookisa.z<-4&&ookisa.z>-7&&(int)(ookisa.z*10)%2==-1){
             
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
             //あか
@@ -63,11 +71,16 @@ public class zontyan : MonoBehaviour
             
             dameji.damejiok=true;
             dameji.mdie++;
+            audioSource.Stop();  
             
             //GameObject instance = (GameObject)Instantiate(ldameji, new Vector3( 0, 0, 0), Quaternion.identity);
             Destroy (this.gameObject);
         }
         //Debug.Log((int)ookisa.z%2);
+        if(ookisa.z<=-4&&ok){
+            ok=false;
+            audioSource.Play ();
+        }
     }
     
 }
