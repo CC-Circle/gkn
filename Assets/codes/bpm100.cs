@@ -100,17 +100,21 @@ public class bpm100 : MonoBehaviour
         }
     }
     // Update is called once per frame
+
+
+
+
     void Update()
     {
-        Debug.Log(lastok);
+        Debug.Log(dameji.mdie);
         if(0f<=Time.time*100%100&&Time.time*100%100<=6f&&underbarok){
             sp();
         }
-        if (Input.GetKey(KeyCode.Return) && sinmaok || sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
+        if (/*Input.GetKey(KeyCode.Return) && sinmaok ||*/ sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
         {
             sinma();
         }
-        if(Input.GetKey(KeyCode.Return)&&Time.time-hayailast>=1.0&&taiminngu!=true||SerialReceive.data==1&&Time.time-hayailast>=1.0&&taiminngu!=true){
+        if(Input.GetKey(KeyCode.LeftCommand)&&Time.time-hayailast>=1.0&&taiminngu!=true||SerialReceive.data==1&&Time.time-hayailast>=1.0&&taiminngu!=true){
             Instantiate(sippai2);
             Instantiate(hayai);
             hayailast=Time.time;

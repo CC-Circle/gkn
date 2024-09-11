@@ -29,7 +29,7 @@ public class Lzontyan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow)&&llive&&kn==dameji.ldie&&Time.realtimeSinceStartup>=dameji.lct+0.1f){
+        if(Input.GetKey(KeyCode.Return)&&llive&&kn==dameji.ldie&&Time.realtimeSinceStartup>=dameji.lct+0.1f){
             dameji.ldie++;
             dameji.taokazu++;
             audioSource.Stop();  
@@ -46,25 +46,25 @@ public class Lzontyan : MonoBehaviour
             
             Destroy (this.gameObject);
         }
-        if(llive&&lookisa.z>-4){
+        if(llive&&lookisa.z>-5){
             lookisa=transform.position;//ugokuに現在の位置を代入
             lookisa.z-=0.01f;
-            lookisa.x+=0.00625f;
+            lookisa.x+=0.008f;
             transform.position=lookisa;//移動後のugokuを代入
             
-        }else if(llive&&lookisa.z<=-4&&lookisa.z>-7&&(int)(lookisa.z*10)%2==0){
+        }else if(llive&&lookisa.z<=-5&&lookisa.z>-7&&(int)(lookisa.z*10)%2==0){
             
             lookisa=transform.position;//ugokuに現在の位置を代入
             lookisa.z-=0.01f;
-            lookisa.x+=0.00625f;
+            lookisa.x+=0.008f;
             transform.position=lookisa;//移動後のugokuを代入'
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
 
-        }else if(llive&&lookisa.z<=-4&&lookisa.z>-7&&(int)(lookisa.z*10)%2==-1){
+        }else if(llive&&lookisa.z<=-5&&lookisa.z>-7&&(int)(lookisa.z*10)%2==-1){
             
             lookisa=transform.position;//ugokuに現在の位置を代入
             lookisa.z-=0.01f;
-            lookisa.x+=0.00625f;
+            lookisa.x+=0.008f;
             transform.position=lookisa;//移動後のugokuを代入
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
             
@@ -78,7 +78,7 @@ public class Lzontyan : MonoBehaviour
             //GameObject instance = (GameObject)Instantiate(ldameji, new Vector3( 0, 0, 0), Quaternion.identity);
             Destroy (this.gameObject);
         }
-        if(lookisa.z<=-4&&ok){
+        if(lookisa.z<=-5.5&&ok){
             ok=false;
             audioSource.Play ();
         }

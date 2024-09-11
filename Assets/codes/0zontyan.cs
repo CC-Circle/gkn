@@ -29,7 +29,7 @@ public class zontyan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow)&&live&&kn==dameji.mdie&&Time.realtimeSinceStartup>=dameji.mct+0.1f){
+        if(Input.GetKey(KeyCode.Return)&&live&&kn==dameji.mdie&&Time.realtimeSinceStartup>=dameji.mct+0.1f){
             dameji.mdie++;
             dameji.taokazu++;
             live=false;
@@ -46,12 +46,12 @@ public class zontyan : MonoBehaviour
             audioSource.Stop();  
             Destroy (this.gameObject);
         }
-        if(live&&ookisa.z>-4){
+        if(live&&ookisa.z>-5){
             ookisa=transform.position;//ugokuに現在の位置を代入
             ookisa.z-=0.01f;
             transform.position=ookisa;//移動後のugokuを代入
             
-        }else if(live&&ookisa.z<-4&&ookisa.z>-7&&(int)(ookisa.z*10)%2==0){
+        }else if(live&&ookisa.z<-5&&ookisa.z>-7&&(int)(ookisa.z*10)%2==0){
             
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
             //しろ
@@ -59,7 +59,8 @@ public class zontyan : MonoBehaviour
             ookisa.z-=0.01f;
             transform.position=ookisa;//移動後のugokuを代入
             
-        }else if(live&&ookisa.z<-4&&ookisa.z>-7&&(int)(ookisa.z*10)%2==-1){
+            
+        }else if(live&&ookisa.z<-5&&ookisa.z>-7&&(int)(ookisa.z*10)%2==-1){
             
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
             //あか
@@ -71,16 +72,18 @@ public class zontyan : MonoBehaviour
             
             dameji.damejiok=true;
             dameji.mdie++;
-            audioSource.Stop();  
+            Destroy (this.gameObject);  
+            audioSource.Stop();
             
             //GameObject instance = (GameObject)Instantiate(ldameji, new Vector3( 0, 0, 0), Quaternion.identity);
-            Destroy (this.gameObject);
+           
         }
         //Debug.Log((int)ookisa.z%2);
-        if(ookisa.z<=-4&&ok){
+        if(ookisa.z<=-5.5&&ok){
             ok=false;
             audioSource.Play ();
         }
+         
     }
     
 }

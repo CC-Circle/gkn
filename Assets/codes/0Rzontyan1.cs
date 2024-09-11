@@ -29,7 +29,7 @@ public class Rzontyan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.RightArrow)&&rlive&&kn==dameji.rdie&&Time.realtimeSinceStartup>=dameji.rct+0.1f){
+        if(Input.GetKey(KeyCode.Return)&&rlive&&kn==dameji.rdie&&Time.realtimeSinceStartup>=dameji.rct+0.1f){
             dameji.rdie++;
             dameji.taokazu++;
             rlive=false;
@@ -46,25 +46,25 @@ public class Rzontyan : MonoBehaviour
             audioSource.Stop();  
             Destroy (this.gameObject);
         }
-        if(rlive&&rookisa.z>-4){
+        if(rlive&&rookisa.z>-5){
             rookisa=transform.position;//ugokuに現在の位置を代入
             rookisa.z-=0.01f;
-            rookisa.x-=0.00625f;
+            rookisa.x-=0.008f;
             transform.position=rookisa;//移動後のugokuを代入
             
-        }else if(rlive&&rookisa.z<=-4&&rookisa.z>-7&&(int)(rookisa.z*10)%2==0){
+        }else if(rlive&&rookisa.z<=-5&&rookisa.z>-7&&(int)(rookisa.z*10)%2==0){
             
             rookisa=transform.position;//ugokuに現在の位置を代入
             rookisa.z-=0.01f;
-            rookisa.x-=0.00625f;
+            rookisa.x-=0.008f;
             transform.position=rookisa;//移動後のugokuを代入
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1);
 
-        }else if(rlive&&rookisa.z<=-4&&rookisa.z>-7&&(int)(rookisa.z*10)%2==-1){
+        }else if(rlive&&rookisa.z<=-5&&rookisa.z>-7&&(int)(rookisa.z*10)%2==-1){
             
             rookisa=transform.position;//ugokuに現在の位置を代入
             rookisa.z-=0.01f;
-            rookisa.x-=0.00625f;
+            rookisa.x-=0.008f;
             transform.position=rookisa;//移動後のugokuを代入
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
 
@@ -75,7 +75,7 @@ public class Rzontyan : MonoBehaviour
             //GameObject instance = (GameObject)Instantiate(ldameji, new Vector3( 0, 0, 0), Quaternion.identity);
             Destroy (this.gameObject);
         }
-        if(rookisa.z<=-4&&ok){
+        if(rookisa.z<=-5.5&&ok){
             ok=false;
             audioSource.Play ();
         }

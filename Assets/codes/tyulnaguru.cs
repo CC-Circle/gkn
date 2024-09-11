@@ -18,7 +18,7 @@ public class tyulnaguru : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow)){
+        if(Input.GetKey(KeyCode.Return)){
             die=true;
             
         }

@@ -16,10 +16,10 @@ public class upandbreak : MonoBehaviour
     void Update()
     {
         iti=transform.position;
-        iti.y+=0.02f;
+        iti.y+=0.04f;
         transform.position=iti;
         c++;
-        if(c>100){
+        if(c>50){
             Destroy(this.gameObject);
         }
     }
