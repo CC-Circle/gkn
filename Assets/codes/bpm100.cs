@@ -160,19 +160,7 @@ public class bpm100 : MonoBehaviour
             
             //Debug.Log("%100=20");
         }
-        if (Time.time * 100 % 100 > 90.0f && Time.time * 100 % 100 < 95.0f){
-            seikoukadoukaok=1;
-            seikoukadouka=0;
-        }
-        if (Time.realtimeSinceStartup - last >= matikazu && riseok)
-        {
-            timerise = transform.localScale; // ローカル変数に格納
-            timerise.x = 0.2f;
-            timerise.y = 0.2f;
-            transform.localScale = timerise;
-            haato=0;
-            riseok = false;
-        }
+
         if (sinmaok != true&&sinmaokok)
         {
             sinmaokok=false;
