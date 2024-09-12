@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 100572477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9999.99, y: 0, z: 0}
+  m_LocalPosition: {x: 9999.99, y: 0, z: -2}
   m_LocalScale: {x: 0.7, y: 0.7, z: 3.6842105}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -829,7 +829,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -981,7 +981,7 @@ Transform:
   m_GameObject: {fileID: 1265277415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10000, y: 0, z: -0.1}
+  m_LocalPosition: {x: 10000, y: 0, z: -2.1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1055,7 +1055,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -1473,7 +1473,7 @@ Transform:
   m_GameObject: {fileID: 1681238736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10191, y: 0, z: -0.1}
+  m_LocalPosition: {x: 10191, y: 0, z: -2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1652,7 +1652,7 @@ Canvas:
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
 --- !u!224 &2000008142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,8 +1689,8 @@ SceneRoots:
   - {fileID: 679857864}
   - {fileID: 1408604608}
   - {fileID: 412148839}
-  - {fileID: 1646414900}
   - {fileID: 676920024}
   - {fileID: 571521432}
   - {fileID: 473525157}
   - {fileID: 1265277420}
+  - {fileID: 1646414900}

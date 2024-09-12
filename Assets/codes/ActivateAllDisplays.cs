@@ -21,6 +21,7 @@ public class ActivateAllDisplays : MonoBehaviour
             }
         rank = new int[5]{0,0,0,0,0};
         rankazu=0;
+        Application.targetFrameRate=60;
     }
 
     // Update is called once per frame

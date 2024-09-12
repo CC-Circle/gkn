@@ -110,7 +110,7 @@ public class bpm100 : MonoBehaviour
         if(0f<=Time.time*100%100&&Time.time*100%100<=6f&&underbarok){
             sp();
         }
-        if (/*Input.GetKey(KeyCode.Return) && sinmaok ||*/ sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
+        if (Input.GetKey(KeyCode.LeftCommand) && sinmaok || sinmaok && SerialReceive.data==1)//retirnキーが押されれるor心マされた時sinmaokの時
         {
             sinma();
         }

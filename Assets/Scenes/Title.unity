@@ -203,7 +203,7 @@ Canvas:
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
 --- !u!224 &69686349
 RectTransform:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ Transform:
   m_GameObject: {fileID: 151794256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9999.99, y: 0, z: 0}
+  m_LocalPosition: {x: 9999.99, y: 0, z: -2}
   m_LocalScale: {x: 0.7, y: 0.7, z: 3.6842105}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -377,7 +377,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -633,7 +633,7 @@ Transform:
   m_GameObject: {fileID: 1158069475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10191, y: 0, z: -0.1}
+  m_LocalPosition: {x: 10191, y: 0, z: -2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -767,7 +767,7 @@ Transform:
   m_GameObject: {fileID: 1269631763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10000, y: 0, z: -0.1}
+  m_LocalPosition: {x: 10000, y: 0, z: -2.1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1548,7 +1548,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
