@@ -16,7 +16,7 @@ public class owarisc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift)){
+        if(Input.GetKey(KeyCode.Return)){
             bpm100.taiminngu=false;
             bpm100.haato=0;
             bpm100.sinmaok=true;

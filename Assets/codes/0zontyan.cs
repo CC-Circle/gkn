@@ -29,7 +29,8 @@ public class zontyan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Return)&&live&&kn==dameji.mdie&&Time.realtimeSinceStartup>=dameji.mct+0.1f){
+        if(Input.GetKey(KeyCode.Return)&&live){
+            Debug.Log("sinda");
             dameji.mdie++;
             dameji.taokazu++;
             live=false;

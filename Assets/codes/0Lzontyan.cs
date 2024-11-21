@@ -29,7 +29,7 @@ public class Lzontyan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Return)&&llive&&kn==dameji.ldie&&Time.realtimeSinceStartup>=dameji.lct+0.1f){
+        if(Input.GetKey(KeyCode.Return)&&llive){
             dameji.ldie++;
             dameji.taokazu++;
             audioSource.Stop();  

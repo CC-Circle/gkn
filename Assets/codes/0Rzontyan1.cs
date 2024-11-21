@@ -29,7 +29,7 @@ public class Rzontyan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Return)&&rlive&&kn==dameji.rdie&&Time.realtimeSinceStartup>=dameji.rct+0.1f){
+        if(Input.GetKey(KeyCode.Return)&&rlive){
             dameji.rdie++;
             dameji.taokazu++;
             rlive=false;
