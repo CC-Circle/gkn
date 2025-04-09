@@ -35,7 +35,6 @@ public class bpm100 : MonoBehaviour
     int seikoukadouka;
     int seikoukadoukaok;
     float hayailast;
-    public static bool rise;
     void Start()
     {
         Time.timeScale = 5 / 3f;
@@ -107,12 +106,6 @@ public class bpm100 : MonoBehaviour
 
     void Update()
     {
-        if(rise==true){
-            haato=0;
-            ookisa.x = 0.25f;
-            ookisa.y = 0.25f;
-            rise=false;
-        }
         Debug.Log(dameji.mdie);
         if(0f<=Time.time*100%100&&Time.time*100%100<=6f&&underbarok){
             sp();

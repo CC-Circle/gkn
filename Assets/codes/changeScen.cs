@@ -23,7 +23,7 @@ public class changeScen : MonoBehaviour
     void Update()
     {
         //もしリターンキーが押されたら関数「naguru」を起動する
-        if(Input.GetKey(KeyCode.Return) ){
+        if(Input.GetKey(KeyCode.Return) ||  SerialReceive.data==1){
             naguru();
             owarisc.kill=false;
         }
